@@ -14,7 +14,7 @@ const deploy = async () => {
   const accounts = await web3.eth.getAccounts();
 
   console.log('Attempting to deploy from: ', accounts[0]);
-  
+
   const result = await new web3.eth.Contract(JSON.parse(compiledFactory.interface))
     .deploy({
       data: compiledFactory.bytecode,
@@ -29,3 +29,4 @@ const deploy = async () => {
 };
 
 deploy();
+// deployed to0xc802e7588f2Ae64c88C77d85c53184cF8eeEf23A 
