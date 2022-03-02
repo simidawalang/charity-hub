@@ -8,7 +8,7 @@ const CampaignIndex = ({ campaigns }) => {
     const items = campaigns.map((address) => {
       return {
         header: address,
-        description: "View Campaign",
+        description: <Link href={`/campaigns/${address}`}>View Campaign</Link>,
         fluid: true,
       };
     });

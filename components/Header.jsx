@@ -5,12 +5,16 @@ import { Menu } from "semantic-ui-react";
 const Header = () => {
   return (
     <Menu style={{ marginTop: "10px" }}>
-      <Menu.Item> CrowdCoin </Menu.Item>
+      <Link href="/">
+          <Menu.Item>CrowdCoin</Menu.Item>
+        </Link>
       <Menu.Menu position="right">
-        <Menu.Item>
-          <Link href="/campaigns/new"> Campaigns</Link>
-        </Menu.Item>
-        <Menu.Item> + </Menu.Item>
+        <Link href="/">
+          <Menu.Item>Campaigns</Menu.Item>
+        </Link>
+        <Link href="/campaigns/new">
+          <Menu.Item>+</Menu.Item>
+        </Link>
       </Menu.Menu>
     </Menu>
   );
