@@ -1,0 +1,43 @@
+$oxblood-blue: #080c24ff;
+$white: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $oxblood-blue;
+  color: $white;
+}
+
+nav {
+  a {
+    color: $white;
+      padding: 15px;
+
+  }
+  padding: 10px 45px;
+  margin-bottom: 40px;
+  width: 100%;
+  border-bottom: 1px solid $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & .nav {
+    &-brand {
+      font-size: 1.75rem;
+      margin: 0;
+    }
+    &-list {
+      list-style: none;
+      display: flex;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    &-item {
+      margin-left: 25px;
+    }
+  }
+}

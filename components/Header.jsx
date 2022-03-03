@@ -4,19 +4,21 @@ import { Menu } from "semantic-ui-react";
 
 const Header = () => {
   return (
-    <Menu style={{ marginTop: "10px" }}>
+    <nav>
       <Link href="/">
-          <Menu.Item>CharityHub</Menu.Item>
-        </Link>
-      <Menu.Menu position="right">
-        <Link href="/">
-          <Menu.Item>Campaigns</Menu.Item>
-        </Link>
-        <Link href="/campaigns/new">
-          <Menu.Item>+</Menu.Item>
-        </Link>
-      </Menu.Menu>
-    </Menu>
+        <h1 className="nav-brand">CharityHub</h1>
+      </Link>
+      <ul className="nav-list">
+        <li className="nav-item">
+          <Link href="/">
+            <Menu.Item>Charities</Menu.Item>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link href="/campaigns/new">+</Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

@@ -15,7 +15,7 @@ const Address = ({
   const items = [
     {
       header: manager,
-      meta: "Address of manager",
+      meta: "Address of charity creator",
       description: "A manager made this and can request for withdrawals",
       style: { overflowWrap: "break-word" },
     },
@@ -36,8 +36,8 @@ const Address = ({
     },
     {
       header: web3.utils.fromWei(balance, "ether"),
-      meta: "Campaign Balance (ether)",
-      description: "How much money the camoaign has left to spend.",
+      meta: "Charity Balance (ether)",
+      description: "How much money this charity has left to spend.",
     },
   ];
   return (
@@ -58,7 +58,7 @@ const Address = ({
         <Grid.Row>
           <Grid.Column>
             <Link href={`/campaigns/${address}/requests`}>
-              <Button primary>View Requests</Button>
+              <Button primary>View Withdrawal Requests</Button>
             </Link>
           </Grid.Column>
         </Grid.Row>

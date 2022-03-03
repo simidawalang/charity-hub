@@ -40,7 +40,7 @@ const DonationForm = ({ address }) => {
   return (
     <Form onSubmit={handleSubmit} error={!!errorMessage}>
       <Form.Field>
-        <label htmlFor="">Want to help this cause? Feel free to donate.</label>
+        <p>Want to help this cause? Feel free to donate.</p>
         <Input
           label="ether"
           labelPosition="right"
@@ -48,7 +48,7 @@ const DonationForm = ({ address }) => {
           onChange={handleChange}
         />
       </Form.Field>
-      <Button loading={loading} primary>
+      <Button loading={loading} color="green">
         Donate
       </Button>
       <Message error header="Oops" content={errorMessage} />
