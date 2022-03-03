@@ -36,7 +36,7 @@ const NewCampaign = () => {
   };
   return (
     <>
-      <h3>Create a campaign</h3>
+      <h3>Create a charity</h3>
       <Form onSubmit={handleSubmit} error={!!errorMessage}>
         <Form.Field>
           <label htmlFor="">Minimum Contribution</label>

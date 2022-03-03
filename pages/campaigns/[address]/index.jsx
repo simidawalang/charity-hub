@@ -42,7 +42,7 @@ const Address = ({
   ];
   return (
     <>
-      <h3>Campaign Details</h3>
+      <h3>Charity Details</h3>
       <Grid>
         <Grid.Row>
           <Grid.Column width={10}>

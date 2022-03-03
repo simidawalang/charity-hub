@@ -8,7 +8,7 @@ const CampaignIndex = ({ campaigns }) => {
     const items = campaigns.map((address) => {
       return {
         header: address,
-        description: <Link href={`/campaigns/${address}`}>View Campaign</Link>,
+        description: <Link href={`/campaigns/${address}`}>View Charity</Link>,
         fluid: true,
       };
     });
@@ -21,7 +21,7 @@ const CampaignIndex = ({ campaigns }) => {
       <Link href="/campaigns/new">
         <Button
           floated="right"
-          content="Create Campaign"
+          content="Create Charity"
           icon="add circle"
           primary
         />
