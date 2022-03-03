@@ -20,7 +20,7 @@ const DonationForm = ({ address }) => {
     e.preventDefault();
 
     const campaign = Campaign(address);
-    
+
     setLoading(true);
     setErrorMessage("");
     try {
@@ -40,7 +40,11 @@ const DonationForm = ({ address }) => {
   return (
     <Form onSubmit={handleSubmit} error={!!errorMessage}>
       <Form.Field>
-        <p>Want to help this cause? Feel free to donate.</p>
+        <h3>
+          Want to help this cause? Feel free to donate. 
+        </h3>
+        <p className="warning-text">Please make sure you're
+          donating from a <strong>Rinkeby</strong> test network account.</p>
         <Input
           label="ether"
           labelPosition="right"

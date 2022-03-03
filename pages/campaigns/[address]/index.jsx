@@ -27,7 +27,7 @@ const Address = ({
     {
       header: requestsCount,
       meta: "Request Count",
-      description: "A request tries ti withdraw money.",
+      description: "A request tries to withdraw money.",
     },
     {
       header: approversCount,
