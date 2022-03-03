@@ -15,9 +15,13 @@ body {
 nav {
   a {
     color: $white;
-      padding: 15px;
-
+    padding: 15px;
   }
+  z-index: 999;
+  background: $oxblood-blue;
+  position: sticky;
+  top: 0;
+  left: 0;
   padding: 10px 45px;
   margin-bottom: 40px;
   width: 100%;
@@ -43,5 +47,5 @@ nav {
 }
 
 .warning-text {
-    color: orange;
+  color: orange;
 }
