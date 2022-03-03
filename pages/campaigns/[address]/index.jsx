@@ -42,14 +42,17 @@ const Address = ({
   ];
   return (
     <>
-      <h3>Campaign Show</h3>
+      <h3>Campaign Details</h3>
       <Grid>
         <Grid.Row>
           <Grid.Column width={10}>
             <Card.Group items={items} />
           </Grid.Column>
           <Grid.Column width={6}>
-            <DonationForm address={address} />
+            <DonationForm
+              address={address}
+              minimumContribution={minimumContribution}
+            />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
