@@ -1,4 +1,4 @@
-#Charity Hub
+# Charity Hub
 
 CharityHub uses a smart contract to ensure that charities reach where they're supposed to and also keeps a record of donations. It is built with **NextJS** and its smart contract written in **Solidity**. 
 
