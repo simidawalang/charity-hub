@@ -12,6 +12,10 @@ body {
   color: $white;
 }
 
+label {
+  color: $white !important;
+}
+
 nav {
   a {
     color: $white;
