@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import { Button, Card } from "semantic-ui-react";
-import factory from "../ethereum/factory";
+import factory from "../../ethereum/factory";
 
 const CampaignIndex = ({ campaigns }) => {
-  const renderCampaigns = () => {
+  const renderCharities = () => {
     const items = campaigns.map((address) => {
       return {
         header: address,
-        description: <Link href={`/campaigns/${address}`}>View Charity</Link>,
+        description: <Link href={`/campaigns/${address}`}>Charity Details</Link>,
         fluid: true,
       };
     });
@@ -17,7 +17,7 @@ const CampaignIndex = ({ campaigns }) => {
   };
   return (
     <div>
-      <h3>Open Campaigns</h3>
+      <h3>Open Charities</h3>
       <Link href="/campaigns/new">
         <Button
           floated="right"
@@ -26,7 +26,7 @@ const CampaignIndex = ({ campaigns }) => {
           primary
         />
       </Link>
-      {renderCampaigns()}
+      {renderCharities()}
     </div>
   );
 };

@@ -1,5 +1,5 @@
-$oxblood-blue: #080c24ff;
-$white: #fff;
+@import "./pages/index.scss";
+@import "./utils/colors.scss";
 
 * {
   margin: 0;
@@ -49,3 +49,4 @@ nav {
 .warning-text {
   color: orange;
 }
+
