@@ -45,7 +45,9 @@ nav {
     }
   }
 }
-
+label {
+  color: $white !important;
+}
 .warning-text {
   color: orange;
 }
