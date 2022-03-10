@@ -55,6 +55,7 @@ const Home = () => {
           </>
         )}
       </div>
+      <strong className="warning-text">Please ensure you connect a Rinkeby test network wallet.</strong>
       {!web3.currentProvider.isMetaMask && (
         <p>
           Hmmm... It appears you don't have MetaMask installed on your browser.
