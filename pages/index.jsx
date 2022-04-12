@@ -1,27 +1,51 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import { Button } from "semantic-ui-react";
 import web3 from "../ethereum/web3";
 
 const Home = () => {
   const [isConnected, setIsConnected] = useState(false);
+  const [currentAccount, setCurrentAccount] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
-    const getNoOfAccounts = async () => {
+    const getListOfAccounts = async () => {
       const accounts = await web3.eth.getAccounts();
-      setIsConnected(!!accounts.length);
+      if (accounts.length !== 0) {
+        setIsConnected(true);
+      }
     };
-    getNoOfAccounts();
+    getListOfAccounts();
   }, []);
+
+  useEffect(() => {
+    const handleAccountChange = async () => {
+      const accounts = await web3.eth.getAccounts();
+      if (accounts.length === 0) {
+        setIsConnected(false);
+      } else {
+        setCurrentAccount(accounts[0]);
+      }
+    };
+
+    if (isConnected) {
+      window.ethereum.on("accountsChanged", handleAccountChange);
+    }
+    return () => {
+      if (isConnected) {
+        window.ethereum.removeListener("accountsChanged", handleAccountChange);
+      }
+    };
+  }, [isConnected, web3]);
 
   const connectWallet = async () => {
     setLoading(true);
     try {
       await window.ethereum.request({ method: "eth_requestAccounts" });
-      router.reload(window.location.pathname);
+      //router.reload(window.location.pathname);
+      const accounts = await web3.eth.getAccounts();
+      setCurrentAccount(accounts[0]);
+      setIsConnected(true);
     } catch (e) {
       console.log(e.messsage);
     }
@@ -41,21 +65,25 @@ const Home = () => {
         </Link>
         {web3.currentProvider.isMetaMask && (
           <>
-            <Button
-              loading={loading}
-              content={`${
-                !isConnected ? "Connect Wallet" : "Wallet Connected"
-              }`}
-              onClick={connectWallet}
-              color="green"
-            />
+          {currentAccount}
+            {!isConnected && (
+              <Button
+                loading={loading}
+                content="Connect Wallet"
+                onClick={connectWallet}
+                color="green"
+              />
+            )}
+
             <Link href="/campaigns/new">
               <Button primary content="Create Charity" />
             </Link>
           </>
         )}
       </div>
-      <strong className="warning-text">Please ensure you connect a Rinkeby test network wallet.</strong>
+      <strong className="warning-text">
+        Please ensure you connect a Rinkeby test network wallet.
+      </strong>
       {!web3.currentProvider.isMetaMask && (
         <p>
           Hmmm... It appears you don't have MetaMask installed on your browser.
@@ -74,5 +102,6 @@ const Home = () => {
     </div>
   );
 };
+
 
 export default Home;
